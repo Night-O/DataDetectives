@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Health Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            background-image: url("{{ url_for('static', filename='back.png') }}");
+            background-size: cover;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 180px 60px;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            font-size: 60px;
+        }
+
+        form {
+            text-align: center;
+        }
+
+        input[type="file"] {
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Upload Health Report</h1>
+        <form id="upload-form" enctype="multipart/form-data" action="/analyze-summary" method="post">
+            <input type="file" id="file-input" name="file">
+            <button type="submit">Analyze</button>
+        </form>
+    </div>
+</body>
+</html>
